@@ -26,7 +26,8 @@ public class CuentaSueldo extends CuentaAhorro {
 
     @Override
     public String toString() {
-        return "CuentaSueldo [nombreEmpresa=" + nombreEmpresa + ", " + super.toString() + "]";
+        String beneficiosStr = String.join(", ", this.getBeneficios());
+        return "CuentaSueldo [nombreEmpresa=" + nombreEmpresa + ", beneficios=" + beneficiosStr + ", " + super.toString() + "]";
     }
-}
+}    
 
