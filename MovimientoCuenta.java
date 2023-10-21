@@ -10,14 +10,12 @@ import java.util.Date;
  * @author Melanie
  */
 public class MovimientoCuenta {
-    // Atributos
     private String numOperacion;
     private String descripcion;
     private Date fecha;
     private double importe;
     private String tipoOperacion;
 
-    // Constructor
     public MovimientoCuenta(String numOperacion, String descripcion, Date fecha, double importe, String tipoOperacion) {
         this.numOperacion = numOperacion;
         this.descripcion = descripcion;
@@ -26,7 +24,6 @@ public class MovimientoCuenta {
         this.tipoOperacion = tipoOperacion;
     }
 
-    // Métodos
     public String getNumOperacion() {
         return numOperacion;
     }
