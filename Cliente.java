@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author luciana
+ * @author carlo
  */
 public class Cliente {
     private String idCliente;
@@ -17,7 +17,7 @@ public class Cliente {
     private int telefono;
     private int dni;
     private List<CuentaBancaria> cuentas;
-    private EventoBancario eventoBancario;
+    private List<EventoBancario> eventosBancarios;  // Cambio en la variable
 
     public Cliente(String idCliente, String nombre, String apellido, String direccion, int telefono, int dni) {
         this.idCliente = idCliente;
@@ -27,8 +27,10 @@ public class Cliente {
         this.telefono = telefono;
         this.dni = dni;
         this.cuentas = new ArrayList<>();
+        this.eventosBancarios = new ArrayList<>();  // Inicialización de la lista
     }
 
+    // Métodos
     public String getIdCliente() {
         return idCliente;
     }
@@ -89,12 +91,17 @@ public class Cliente {
         cuentas.add(cuenta);
     } 
     
-    public EventoBancario getEventoBancario() {
-        return eventoBancario;
+    public List<EventoBancario> getEventosBancarios() {
+        return eventosBancarios;
     }
 
-    public void setEventoBancario(EventoBancario eventoBancario) {
-        this.eventoBancario = eventoBancario;
+    public void agregarEventoBancario(EventoBancario evento) {
+        if (eventosBancarios.size() < 5) {  // Verificación del límite de 5 eventos
+            eventosBancarios.add(evento);
+            evento.setCliente(this);  // Asociación bidireccional
+        } else {
+            System.out.println("El cliente ha alcanzado el límite de 5 eventos bancarios anuales.");
+        }
     }
 
     @Override
@@ -104,4 +111,3 @@ public String toString() {
            //(eventoBancario == null ? "" : ", Evento Bancario: " + eventoBancario.toString());
 }
 }
-    
