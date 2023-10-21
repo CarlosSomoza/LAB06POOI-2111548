@@ -21,7 +21,6 @@ public class EventoBancario {
         this.descripcionEvento = descripcionEvento;
     }
 
-    // Métodos
     public Date getFecha() {
         return fecha;
     }
