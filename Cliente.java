@@ -29,7 +29,6 @@ public class Cliente {
         this.cuentas = new ArrayList<>();
     }
 
-    // Métodos
     public String getIdCliente() {
         return idCliente;
     }
