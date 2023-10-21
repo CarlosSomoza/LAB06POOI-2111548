@@ -3,12 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.bancousuario;
+import java.util.ArrayList;
 
 /**
  *
  * @author carlo
  */
 public class CuentaBancaria {
+    // Atributos
     private String numeroCuenta;
     private String descripcionCuenta;
     private String cuentaCCI;
@@ -16,16 +18,19 @@ public class CuentaBancaria {
     private ArrayList<MovimientoCuenta> movimientos;
     private String estado;
 
+    // Constructor
     public CuentaBancaria(String numeroCuenta, String descripcionCuenta, String cuentaCCI, String estado) {
         this.numeroCuenta = numeroCuenta;
         this.descripcionCuenta = descripcionCuenta;
         this.cuentaCCI = cuentaCCI;
         this.saldoDisponible = 0;
-        this.movimientos = new ArrayList<MovimientoCuenta>();
+        this.movimientos = new ArrayList<>();
         this.estado = estado;
     }
 
+    // Métodos
     public void calcularInteresMensual() {
+        // Implementa el cálculo de intereses mensuales aquí
     }
 
     public String getNumeroCuenta() {
@@ -68,4 +73,9 @@ public class CuentaBancaria {
     public String toString() {
         return "CuentaBancaria [Numero de Cuenta: " + numeroCuenta + ", Descripción: " + descripcionCuenta + ", CCI: " + cuentaCCI + ", Saldo Disponible: " + saldoDisponible + ", Estado: " + estado + "]";
     }
+
+    void ordenarMovimientosPorFechaAscendente() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
+    
